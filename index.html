@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions</title>
+</head>
+
+<body>
+    <div>
+        <h1>CONDITIONS</h1>
+        <h2>Check if a Given Number is Positive, Negative, or Zero</h2>
+        <label for="number">Enter a number:</label>
+        <input type="number" id="Checkinput" placeholder="Enter a number">
+        <button onclick="CheckNumber()">CHECK</button>
+        <p id="Checkresult">Result:</p>
+        <br>
+        <hr>
+    </div>
+    <script>
+        function CheckNumber() {
+            let number = Number(document.getElementById('Checkinput').value);
+            let result = document.getElementById('Checkresult');
+
+            if (number > 0) {
+                result.textContent = "The given number is Positive.";
+            } else if (number < 0) {
+                result.textContent = "The given number is Negative.";
+            } else {
+                result.textContent = "The given number is Zero.";
+            }
+        }
+    </script>
+
+    <div>
+        <h2>Discount calculation</h2>
+        <label for="number"> Enter the Bill Amount:</label>
+        <input type="number" id="Discount" placeholder="Enter the Amount">
+        <button onclick="Discount()">Enter</button>
+        <p id="DisResult">Enter:</p>
+        <br>
+        <hr>
+    </div>
+    <script>
+        function Discount() {
+            let billamount = Number(document.getElementById('Discount').value);
+            let result = document.getElementById('DisResult');
+
+            if (billamount > 1000) {
+                discount = billamount / 10;
+                result.textContent = "BILL AMOUNT IS:" + (billamount - discount);
+            } else {
+                result.textContent = " SORRY! YOU HAVE NO DISCOUNT";
+            }
+        }
+
+    </script>
+
+    <div>
+        <h2>Discount calculation using coupon code.</h2>
+        <label for="number"> Enter the Amount:</label>
+        <input type="number" id="CoupDiscount" placeholder="Enter the Amount">
+        <label for="text"> Enter your Coupon code:</label>
+        <input type="text" id="CoupCode" placeholder="Enter the code">
+        <button onclick="CoupDiscount()">Check</button>
+        <p id="CoupResult">YOUR BILL AMOUNT:</p>
+        <br>
+        <hr>
+    </div>
+    <script>
+
+        function CoupDiscount() {
+            let billamount = Number(document.getElementById('CoupDiscount').value);
+            let coupon = document.getElementById('CoupCode').value;
+            let result = document.getElementById('CoupResult');
+
+            if (billamount >= 1000 && coupon == "CODE100") {
+                coupon = billamount - 100;
+                result.innerText = "Your Billamount is:" + (coupon);
+            } else {
+                result.innerText = "Billamount is:";
+            }
+        }
+    </script>
+
+    <div>
+        <h2>Grade System</h2>
+        <label for="number"> Enter your mark:</label>
+        <input type="number" id="mark" placeholder="Enter your mark">
+        <button onclick="mark()">Check</button>
+        <p id="GradeResult">Enter Your Grade:</p>
+        <br>
+        <hr>
+    </div>
+
+    <script>
+        function mark() {
+            let mark = Number(document.getElementById('mark').value);
+            let result = document.getElementById('GradeResult');
+
+            if (mark >= 90 && mark <= 100) {
+                result.textContent = "YOU  HAVE OBTAINED DISTINCTION";
+            } else if (mark >= 60 && mark < 90) {
+                result.textContent = "YOU HAVE OBTAINED FIRST CLASS";
+            } else if (mark >= 40 && mark < 60) {
+                result.textContent = "YOU HAVE OBTAINED SECOND CLASS";
+            } else if (mark >= 0 && mark < 40) {
+                result.textContent = "YOU HAVE FAILED YOUR EXAM";
+            } else {
+                result.textContent = "INVALID NUMBER";
+            }
+        }
+
+    </script>
+
+    <div>
+        <h2>Odd or Even.</h2>
+        <label for="number">Enter the Number:</label>
+        <input type="number" id="oddeven" placeholder="Enter the Number">
+        <button onclick="CheckOddEven()">Check</button>
+        <p id="oddResult">Result:</p>
+        <br>
+        <hr>
+    </div>
+    <script>
+        function CheckOddEven() {
+            let number = Number(document.getElementById('oddeven').value);
+            let result = "";
+
+            if (number % 2 == 0) {
+                result = "THE GIVEN VALUE IS EVEN NUMBER.";
+            } else {
+                result = "THE GIVEN VALUE IS ODD NUMBER.";
+            }
+            document.getElementById('oddResult').innerText = result;
+        }
+    </script>
+
+    <div>
+        <h2>Greater or Smaller number</h2>
+        <label for="number">Enter the values:</label>
+        <input type="number" id="Number1" placeholder="Enter the First Value">
+        <input type="number" id="Number2" placeholder="Enter the Second Value">
+        <button onclick="GreaterOrSmaller()">Check</button>
+        <p id="NumResult">Result:</p>
+        <br>
+        <hr>
+    </div>
+    <script>
+        function GreaterOrSmaller() {
+            let firstNumber = Number(document.getElementById('Number1').value);
+            let secondNumber = Number(document.getElementById('Number2').value);
+            let result = "";
+
+            if (firstNumber > secondNumber) {
+                result = firstNumber + "is greater than second number.";
+            } else if (secondNumber > firstNumber) {
+                result = secondNumber + "is greater than first number.";
+            } else {
+                result = "The Given Numbers are equal.";
+            }
+            document.getElementById('NumResult').innerText = result;
+        }
+    </script>
+
+<div>
+    <h2>Salary Hike</h2>
+    <label for="hike">Enter the salary:</label>
+    <input type="number" id="salary" placeholder="Enter your Salary">
+    <input type="number" id="experience" placeholder="Enter your experience">
+    <button onclick="SalaryHike()">Check</button>
+    <p id="hikeResult">Result:</p>
+    <br>
+    <hr>
+</div>
+
+<script>
+    function SalaryHike() {
+        let salary = Number(document.getElementById('salary').value);
+        let experience = Number(document.getElementById('experience').value);
+        let result = "";
+
+        if (salary < 30000 && experience >= 3) {
+            let hike = salary * 0.5;
+            result = "Your Salary is" + (salary + hike);
+        } else {
+            result = salary + "Sorry! you have no hike in this year."
+        }
+        document.getElementById('hikeResult').textContent= result;
+    }
+</script>
+
+
+    <div>
+        <h2>Switch Statement</h2>
+        <label for="Product">Enter the Product:</label>
+        <input type="text" id="Product" placeholder="Enter the product">
+        <button onclick="prodPrice()">Get Price</button>
+        <p id="ProductResult">PRICE:</p>
+        <br>
+        <hr>
+    </div>
+
+    <script>
+        function prodPrice() {
+            let product = document.getElementById('Product').value.toLowerCase();
+            let price = "";
+
+            switch (product) {
+                case "rice":
+                    price = "₹65";
+                    break;
+                case "oil":
+                    price = "₹155";
+                    break;
+                case "chocolates":
+                    price = "₹50";
+                    break;
+                case "cookies":
+                    price = "₹40";
+                    break;
+                case "fruits":
+                    price = "₹120";
+                    break;
+                default:
+                    price = "INVALID PRODUCT";
+            }
+
+            document.getElementById('ProductResult').innerText = "PRICE: " + price;
+        }
+    </script>
+
+    
+    <div>
+        <h2>Calculator</h2>
+        <label for="calc">Enter the Product:</label>
+        <input type="number" id="Num3" placeholder="Enter the First Number">
+        <input type="number" id="Num4" placeholder="Enter the Second Number">
+        <button onclick="calc('add')">Add</button>
+        <button onclick="calc('sub')">Sub</button>
+        <button onclick="calc('mul')">Mul</button>
+        <button onclick="calc('div')">Div</button>
+        <button onclick="calc('mod')">Mod</button>
+        <p id="calcResult">Result:</p>
+        <br>
+        <hr>
+    </div>
+    <script>
+        function calc(operation) {
+            let Num3 = Number(document.getElementById('Num3').value);
+            let Num4 = Number(document.getElementById('Num4').value);
+            let result = "";
+
+            switch (operation) {
+                case 'add':
+                    result = Num3 + Num4;
+                    break;
+
+                case 'sub':
+                    result = Num3 - Num4;
+                    break;
+
+                case 'mul':
+                    result = Num3 * Num4;
+                    break;
+
+                case 'div':
+                    result = Num3 / Num4;
+                    break;
+
+                case 'mod':
+                    result = Num3 % Num4;
+                    break;
+            }
+           document.getElementById('calcResult').innerHTML  = result;
+        }
+    </script>
+
+
+</body>
+
+</html>
