@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTROLFLOW-STATEMENTS.(for loop)</title>
+</head>
+
+<body>
+    <div>
+        <h1>CONTROLFLOW STATEMENT</h1>
+        <h2>Range from the user.</h2>
+        <label for="range">Print the Range:</label>
+        <input type="number" id="start" placeholder="Enter the first number">
+        <input type="number" id="end" placeholder="Enter the second number">
+        <button onclick="range()">Print</button>
+        <p id="rangeResult">RESULT:</p>
+        <br>
+        <hr>
+    </div>
+
+    <script>
+
+        function range() {
+            let start = Number(document.getElementById('start').value);
+            let end = Number(document.getElementById('end').value);
+            let result = "";
+
+            if (start >= end) {
+                result.innerHTML = "Starting value must be smaller than the second value and not the same value.";
+                return;
+            }
+
+            for (let num = start; num <= end; num++) {
+                result += num + '<br>';
+            }
+       document.getElementById('rangeResult').innerHTML = result;
+        }
+    </script>
+
+
+    <div>
+        <h2>Range Sum</h2>
+        <label for="range">Print the Range:</label>
+        <input type="number" id="starting" placeholder="Enter the first number">
+        <input type="number" id="ending" placeholder="Enter the second number">
+        <button onclick="rangeSum()">Print</button>
+        <p id="rangeSumResult">RESULT:</p>
+        <br>
+        <hr>
+    </div>
+
+    <script>
+        function rangeSum() {
+            var starting = Number(document.getElementById('starting').value);
+            var ending = Number(document.getElementById('ending').value);
+
+            if (starting >= ending) {
+                document.getElementById('rangeSumResult').textContent = "Starting value must be smaller than the second value.";
+                return;
+            }
+
+            var result = "";
+            var sum = 0;
+
+            for (var num = starting; num <= ending; num++) {
+                result += num;
+                if (num < ending) {
+                    result += ", ";
+                }
+                sum += num;
+            }
+
+            document.getElementById('rangeSumResult').innerHTML = "Range: " + result + "<br>Sum: " + sum;
+        }
+    </script>
+
+    <div>
+        <h2>Range Average</h2>
+        <label for="range">Print the Range Average:</label>
+        <input type="number" id="started" placeholder="Enter the first number">
+        <input type="number" id="ended" placeholder="Enter the second number">
+        <button onclick="rangeAver()">Print</button>
+        <p id="rangeAverResult">RESULT:</p>
+        <br>
+        <hr>
+    </div>
+
+    <script>
+        function rangeAver() {
+            var started = Number(document.getElementById('started').value);
+            var ended = Number(document.getElementById('ended').value);
+
+            if (started >= ended) {
+                document.getElementById('rangeAverResult').textContent =
+                    "Starting value must be smaller than the second value.";
+                return;
+            }
+
+            var sum = 0;
+            var count = 0;
+            var result = "";
+
+            for (var num = started; num <= ended; num++) {
+                result += num;
+                if (num < ended) {
+                    result += ", ";
+                }
+                sum += num;
+                count++;
+            }
+
+            var average = sum / count;
+
+            document.getElementById('rangeAverResult').innerHTML =
+                "Range: " + result + "<br>Sum: " + sum + "<br>Average: " + average;
+        }
+    </script>
+
+
+    <div>
+        <h2>Multiplication Table</h2>
+        <label for="multiplication">Print the table:</label>
+        <input type="number" id="table" placeholder="Table">
+        <input type="number" id="startRange" placeholder="starting range">
+        <input type="number" id="endRange" placeholder="Ending range">
+        <button onclick="rangeTable()">Print</button>
+        <p id="tableResult">RESULT:</p>
+        <br>
+        <hr>
+    </div>
+
+    <script>
+        function rangeTable() {
+            let table = Number(document.getElementById('table').value);
+            let start = Number(document.getElementById('startRange').value);
+            let end = Number(document.getElementById('endRange').value);
+            let result = "";
+
+            for (let num = start; num <= end; num++) {
+                let ans = table * num;
+                result += table + "*" + num + "=" + ans + '<br>';
+                //         5       *     1     =     5
+            }
+            document.getElementById('tableResult').innerHTML = result;
+        }
+    </script>
+
+<div>
+    <h2>Multiplication Table of 5</h2>
+    <label for="multiplication">Print the table:</label>
+    <input type="number" id="start1Range" placeholder="starting range">
+    <input type="number" id="end1Range" placeholder="Ending range">
+    <button onclick="rangeTable()">Print</button>
+    <p id="table5Result">RESULT:</p>
+    <br>
+    <hr>
+</div>
+
+<script>
+    function rangeTable() {
+    
+        let start = Number(document.getElementById('start1Range').value);
+        let end = Number(document.getElementById('end1Range').value);
+        let result = "";
+
+        for (let num = start; num <= end; num++) {
+            let ans = 5 * num;
+            result += 5 + "*" + num + "=" + ans + '<br>';
+            //         5       *     1     =     5
+        }
+        document.getElementById('table5Result').innerHTML = result;
+    }
+</script>
+
+</body>
+
+</html>

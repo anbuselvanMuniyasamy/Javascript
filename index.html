@@ -164,32 +164,32 @@
         }
     </script>
 
-<div>
-    <h2>Salary Hike</h2>
-    <label for="hike">Enter the salary:</label>
-    <input type="number" id="salary" placeholder="Enter your Salary">
-    <input type="number" id="experience" placeholder="Enter your experience">
-    <button onclick="SalaryHike()">Check</button>
-    <p id="hikeResult">Result:</p>
-    <br>
-    <hr>
-</div>
+    <div>
+        <h2>Salary Hike</h2>
+        <label for="hike">Enter the salary:</label>
+        <input type="number" id="salary" placeholder="Enter your Salary">
+        <input type="number" id="experience" placeholder="Enter your experience">
+        <button onclick="SalaryHike()">Check</button>
+        <p id="hikeResult">Result:</p>
+        <br>
+        <hr>
+    </div>
 
-<script>
-    function SalaryHike() {
-        let salary = Number(document.getElementById('salary').value);
-        let experience = Number(document.getElementById('experience').value);
-        let result = "";
+    <script>
+        function SalaryHike() {
+            let salary = Number(document.getElementById('salary').value);
+            let experience = Number(document.getElementById('experience').value);
+            let result = "";
 
-        if (salary < 30000 && experience >= 3) {
-            let hike = salary * 0.5;
-            result = "Your Salary is" + (salary + hike);
-        } else {
-            result = salary + "Sorry! you have no hike in this year."
+            if (salary < 30000 && experience >= 3) {
+                let hike = salary * 0.5;
+                result = "Your Salary is" + (salary + hike);
+            } else {
+                result = salary + "Sorry! you have no hike in this year."
+            }
+            document.getElementById('hikeResult').textContent = result;
         }
-        document.getElementById('hikeResult').textContent= result;
-    }
-</script>
+    </script>
 
 
     <div>
@@ -231,7 +231,7 @@
         }
     </script>
 
-    
+
     <div>
         <h2>Calculator</h2>
         <label for="calc">Enter the Product:</label>
@@ -273,10 +273,11 @@
                     result = Num3 % Num4;
                     break;
             }
-           document.getElementById('calcResult').innerHTML  = result;
+            document.getElementById('calcResult').innerHTML = result;
         }
     </script>
 
+   
 
 </body>
 
